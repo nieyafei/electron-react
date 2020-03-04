@@ -39,3 +39,21 @@ yarn add cross-env --save-dev
 
 # 配置 cross-env BROWSER=none
 ```
+
+- 配置打包
+
+```
+yarn add electron-builder --dev
+```
+
+## 项目操作
+
+```
+项目启动
+yarn run dev
+```
+
+```
+项目打包
+yarn run pack
+```

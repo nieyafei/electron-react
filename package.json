@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
+  "author": "nyf",
   "dependencies": {
     "concurrently": "^5.1.0",
     "cra-template": "1.0.2",
@@ -19,7 +20,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none yarn start\""
+    "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none yarn start\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "prepack": "yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,7 +43,48 @@
   "devDependencies": {
     "antd-dayjs-webpack-plugin": "^0.0.8",
     "customize-cra": "^0.9.1",
+    "electron-builder": "^22.3.6",
     "react-app-rewired": "^2.1.5",
     "webpack-bundle-analyzer": "^3.6.0"
+  },
+  "build": {
+    "productName": "electron-react",
+    "appId": "com.electron.electron-react",
+    "copyright": "Copyright © 2020 ${author}",
+    "extends": null,
+    "icon": "../favicon.ico",
+    "files": [
+      "build/**/*",
+      "public/*"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "Development"
+    }
   }
 }
