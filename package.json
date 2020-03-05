@@ -36,6 +36,8 @@
     "prepack": "yarn run build",
     "pack-all": "electron-builder -mwl",
     "prepack-all": "yarn run build",
+    "release": "electron-builder",
+    "prerelease": "yarn run build",
     "dist": "electron-builder"
   },
   "eslintConfig": {

@@ -55,5 +55,5 @@ yarn run dev
 
 ```
 项目打包
-yarn run pack
+yarn run pack-all
 ```
