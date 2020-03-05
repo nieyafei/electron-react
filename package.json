@@ -3,27 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "main": "main.js",
-  "author": "nyf",
+  "author": {
+    "name": "nyf",
+    "email": "327675933@qq.com"
+  },
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "cra-template": "1.0.2",
     "cross-env": "^7.0.1",
-    "electron": "^8.0.3",
     "electron-is-dev": "^1.1.0",
+    "history": "^4.10.1",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "wait-on": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "NODE_ENV=production react-scripts start",
+    "build": "NODE_ENV=build react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently \"wait-on http://localhost:3000 && electron .\" \"cross-env BROWSER=none yarn start\"",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "prepack": "yarn run build"
+    "prepack": "yarn run build",
+    "pack-all": "electron-builder -mwl",
+    "prepack-all": "yarn run build",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,10 +55,12 @@
   "devDependencies": {
     "antd-dayjs-webpack-plugin": "^0.0.8",
     "customize-cra": "^0.9.1",
+    "electron": "^8.0.3",
     "electron-builder": "^22.3.6",
     "react-app-rewired": "^2.1.5",
     "webpack-bundle-analyzer": "^3.6.0"
   },
+  "homepage": ".",
   "build": {
     "productName": "electron-react",
     "appId": "com.electron.electron-react",
@@ -55,7 +69,8 @@
     "icon": "../favicon.ico",
     "files": [
       "build/**/*",
-      "public/*"
+      "public/*",
+      "main.js"
     ],
     "dmg": {
       "contents": [

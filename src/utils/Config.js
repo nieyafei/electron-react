@@ -1,0 +1,1 @@
+export const apiBefore = process.env.NODE_ENV === 'production' ? 'https://swj.codequn.com' : ''; //api前缀

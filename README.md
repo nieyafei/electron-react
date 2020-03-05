@@ -17,8 +17,8 @@ yarn add webpack-bundle-analyzer --dev
 - 配置Electron
 
 ```
-yarn add electron@latest --save-dev
-yarn add electron-is-dev --save-dev
+yarn add electron@latest --dev
+yarn add electron-is-dev --save
 ```
 - 多个命令执行
 
